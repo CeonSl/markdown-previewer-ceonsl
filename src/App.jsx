@@ -19,10 +19,26 @@ function App() {
     $("#preview").html(marked.parse(text));
   }, [text]);
 
+  const handleClickExpand = (typeWindow) => {
+    if (typeWindow == "Editor") {
+      $(".container-editor").toggleClass("complete");
+      $(".container-editor").toggleClass("normal");
+      $(".container-previewer").toggleClass("normal");
+    } else {
+      $(".container-previewer").toggleClass("complete");
+      $(".container-previewer").toggleClass("normal");
+      $(".container-editor").toggleClass("normal");
+    }
+  };
+
   return (
     <>
       <div className="background"></div>
-      <Window windowType={"Editor"}>
+      <Window
+        windowType={"Editor"}
+        handleClickExpand={handleClickExpand}
+        className="container-editor normal"
+      >
         <textarea
           name="editor"
           id="editor"
@@ -33,7 +49,11 @@ function App() {
           onChange={(e) => dispatch(setText(e.target.value))}
         ></textarea>
       </Window>
-      <Window windowType={"Previewer"}>
+      <Window
+        windowType={"Previewer"}
+        handleClickExpand={handleClickExpand}
+        className="container-previewer normal"
+      >
         <div className="container-previewer">
           <p className="preview" id="preview"></p>
         </div>

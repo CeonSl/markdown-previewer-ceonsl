@@ -8,12 +8,13 @@
 
             table {
                 border-collapse: collapse;
-                width: 50%;
+                width: 70%;
             }
     
             td,th {
                 width: 200px;
                 padding: 1rem;
+                padding-left: 0;
                 text-align: start;
             }
     
@@ -24,11 +25,30 @@
         }
 
         * {
+            margin: 0;
+            padding: 0;
+            margin: 1rem 0;
             width: 97%;
         }
 
+        ul, ol {
+            padding-left: 1rem;
+        }
 
+        blockquote {
+            margin-left: 2rem;
+            padding-left: .5rem;
+            border-left: 1px solid #aaa;
+        }
      
+        code {
+            background-color: #eee;
+        }
+
+        pre {
+            background-color: #eee;
+            display: block;
+        }
     }
 }
 

@@ -7,6 +7,15 @@
         overflow-y: auto;
         max-width: 97%;
         min-width: 97%;
+        margin: 1rem 0;
     }
 }
 
+.complete {
+    min-height: 95vh;
+    textarea {
+        height: 860px;
+        max-height: 860px;
+        min-height: 860px;
+    }
+  }
